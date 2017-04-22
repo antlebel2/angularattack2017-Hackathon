@@ -15,7 +15,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "\n        <div class=\"app-container\">\n            <div class=\"component-container\">\n                <router-outlet></router-outlet>\n            </div>\n            <div class=\"home-button-container\">\n                <button class=\"home-button\" [routerLink]=\"['/home/']\">Home</button>\n                <button class=\"home-button\" [routerLink]=\"['/employee/']\">Employee Page</button>\n            </div>\n        </div>\n    "
+        template: "\n        <div class=\"app-container\">\n            <div class=\"component-container\">\n                <router-outlet></router-outlet>\n            </div>\n            <div class=\"home-button-container\">\n                <button class=\"home-button\" [routerLink]=\"['/home/']\">\n                <i class=\"fa fa-home\"></i> Home</button>\n                <button class=\"home-button\" [routerLink]=\"['/employee/']\">Employee Page</button>\n            </div>\n        </div>\n    "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
