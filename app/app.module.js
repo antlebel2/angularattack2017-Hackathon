@@ -38,10 +38,7 @@ AppModule = __decorate([
             employer_component_1.EmployerComponent
         ],
         bootstrap: [
-            app_component_1.AppComponent,
-            home_component_1.HomeComponent,
-            employee_component_1.EmployeeComponent,
-            employer_component_1.EmployerComponent
+            app_component_1.AppComponent
         ]
     })
 ], AppModule);
