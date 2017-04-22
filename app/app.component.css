@@ -100,7 +100,9 @@ button:focus {
 .form-input-text {
     width: 400px; 
     text-align:center; 
-    height: 50px; 
-    font-size: 30px; 
+    height: 40px; 
+    font-size: 28px; 
     border-radius: 10px;
+    outline: none;
+    margin-top: 5px;
 }
