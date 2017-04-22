@@ -18,4 +18,4 @@ EmployeeSelectedComponent = __decorate([
     })
 ], EmployeeSelectedComponent);
 exports.EmployeeSelectedComponent = EmployeeSelectedComponent;
-//# sourceMappingURL=employeeselected.component.js.map
+//# sourceMappingURL=employeeSelected.component.js.map

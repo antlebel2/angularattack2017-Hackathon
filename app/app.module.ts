@@ -18,13 +18,9 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'employee', component: EmployeeComponent },
-<<<<<<< HEAD
-      { path: 'employer', component: EmployerComponent },
       { path: 'employerSelected', component: EmployerSelectedComponent },
       { path: 'employeeSelected', component: EmployeeSelectedComponent },
-=======
       { path: 'employer/bio', component: EmployerBioComponent },
->>>>>>> 3d14428f9e78177a24c04818f1f9268cb000e9fb
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]) 
   ],
@@ -32,13 +28,9 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
     AppComponent, 
     HomeComponent ,
     EmployeeComponent,
-<<<<<<< HEAD
-    EmployerComponent,
     EmployerSelectedComponent,
-    EmployeeSelectedComponent
-=======
+    EmployeeSelectedComponent,
     EmployerBioComponent
->>>>>>> 3d14428f9e78177a24c04818f1f9268cb000e9fb
   ],
   bootstrap: [ 
     AppComponent

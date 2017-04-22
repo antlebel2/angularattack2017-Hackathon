@@ -23,7 +23,7 @@ var EmployerBioComponent = (function () {
 }());
 EmployerBioComponent = __decorate([
     core_1.Component({
-        template: "\n    <div class=\"component-title\">\n        You have chosen to learn more about the company you work for.\n    </div>\n    <div class=\"component-header\">\n        (Organization Name) - (Locality, region:code) (1st phone #)\n    </div>\n    <div class=\"component-header-container\">\n        <img class=\"component-header-image\" />\n    </div>\n    <div class=\"component-content\">\n        <div class=\"component-content-left\">\n            <div class=\"component-content-data-header\">Online since: </div>\n            <div class=\"component-content-data-header\">Keywords: </div>\n            <div class=\"component-content-data-header\">Traffic Ranking: </div>\n        </div>\n        <div class=\"component-content-right\">\n            <div class=\"component-content-data\">Online since: </div>\n            <div class=\"component-content-data\">Keywords: </div>\n            <div class=\"component-content-data\">Traffic Ranking: </div>\n        </div>\n    </div>\n    <div class=\"component-button-container\">\n        <button>test</button>\n        <button>test</button>\n        <button>test</button>       \n    </div>\n    "
+        templateUrl: 'app/employerBio.component.html'
     }),
     __metadata("design:paramtypes", [http_1.Http])
 ], EmployerBioComponent);

@@ -13,13 +13,9 @@ var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home.component");
 var employee_component_1 = require("./employee.component");
-<<<<<<< HEAD
-var employer_component_1 = require("./employer.component");
+var employerBio_component_1 = require("./employerBio.component");
 var employerSelected_component_1 = require("./employerSelected.component");
 var employeeSelected_component_1 = require("./employeeSelected.component");
-=======
-var employerBio_component_1 = require("./employerBio.component");
->>>>>>> 3d14428f9e78177a24c04818f1f9268cb000e9fb
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,13 +29,9 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: 'home', component: home_component_1.HomeComponent },
                 { path: 'employee', component: employee_component_1.EmployeeComponent },
-<<<<<<< HEAD
-                { path: 'employer', component: employer_component_1.EmployerComponent },
                 { path: 'employerSelected', component: employerSelected_component_1.EmployerSelectedComponent },
                 { path: 'employeeSelected', component: employeeSelected_component_1.EmployeeSelectedComponent },
-=======
                 { path: 'employer/bio', component: employerBio_component_1.EmployerBioComponent },
->>>>>>> 3d14428f9e78177a24c04818f1f9268cb000e9fb
                 { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ])
         ],
@@ -47,13 +39,9 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             home_component_1.HomeComponent,
             employee_component_1.EmployeeComponent,
-<<<<<<< HEAD
-            employer_component_1.EmployerComponent,
             employerSelected_component_1.EmployerSelectedComponent,
-            employeeSelected_component_1.EmployeeSelectedComponent
-=======
+            employeeSelected_component_1.EmployeeSelectedComponent,
             employerBio_component_1.EmployerBioComponent
->>>>>>> 3d14428f9e78177a24c04818f1f9268cb000e9fb
         ],
         bootstrap: [
             app_component_1.AppComponent
