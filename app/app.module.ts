@@ -8,6 +8,9 @@ import { HomeComponent } from './home.component';
 import { EmployeeComponent } from './employee.component';
 import { EmployerComponent } from './employer.component';
 
+import { EmployerSelectedComponent } from './employerSelected.component';
+import { EmployeeSelectedComponent } from './employeeSelected.component';
+
 @NgModule({
   imports: [ 
     BrowserModule,
@@ -16,6 +19,8 @@ import { EmployerComponent } from './employer.component';
       { path: 'home', component: HomeComponent },
       { path: 'employee', component: EmployeeComponent },
       { path: 'employer', component: EmployerComponent },
+      { path: 'employerSelected', component: EmployerSelectedComponent },
+      { path: 'employeeSelected', component: EmployeeSelectedComponent },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]) 
   ],
@@ -23,7 +28,9 @@ import { EmployerComponent } from './employer.component';
     AppComponent, 
     HomeComponent ,
     EmployeeComponent,
-    EmployerComponent
+    EmployerComponent,
+    EmployerSelectedComponent,
+    EmployeeSelectedComponent
   ],
   bootstrap: [ 
     AppComponent
