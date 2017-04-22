@@ -9,6 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var EmployeeComponent = (function () {
     function EmployeeComponent() {
+        this.data = true;
+        this.social = true;
+        this.facebook = true;
+        this.twitter = true;
+        this.linkedin = true;
     }
     return EmployeeComponent;
 }());

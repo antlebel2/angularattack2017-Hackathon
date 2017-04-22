@@ -1,20 +1,23 @@
-<div>
+<div class="component-title">
   You have chosen to learn more about a co-worker! Looking for dirty laundry.
   (Co-worker Name) - (Location - region) - (Known phone number)
-  <br/>
-  <img src="" />
-
-  <br/>
-  Name:
-  <br/>
-  Social Media Presense:
-  <br/>
-  Facebook:
-  <br/>
-  Twitter:
-  <br/>
-  LinkedIn:
-  <br/>
-  etc:
-  <br/>
 </div>
+-->{{data}}<--
+<div ng-hide="data" class="component-header">
+  <img src="" />
+  <div ng-hide="name" class="component-content-data">Name:</div>
+  <div ng-hide="social" class="component-content-data-header">Social Media Presense:</div>
+  <div ng-hide="facebook" class="component-content-data">Facebook:</div>
+  <div ng-hide="twitter" class="component-content-data">Twitter:</div>
+  <div ng-hide="linkedin" class="component-content-data">LinkedIn:</div>
+  <div ng-hide="etc" class="component-content-data">etc:</div>
+</div>
+<div ng-hide="!data" class="component-header">
+  Co-Worker is off the grid!
+</div>
+<div >
+        <input type="button" value="Show Hide DIV" ng-click="ShowHide()" />
+        <br />
+        <br />
+        <div ng-show = "IsVisible">My DIV</div>
+    </div>
