@@ -25,6 +25,14 @@ button {
     color: #FFFFFF;
 }
 
+.button-wide{
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #328CC1;
+    color: #FFFFFF;
+}
+
 button:focus {
     outline: none;
 }
@@ -87,4 +95,12 @@ button:focus {
 
 .component-button-container {
     margin-top: 10px;
+}
+
+.form-input-text {
+    width: 400px; 
+    text-align:center; 
+    height: 40px; 
+    font-size: 30px; 
+    border-radius: 10px;
 }
