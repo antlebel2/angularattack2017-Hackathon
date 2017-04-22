@@ -9,10 +9,11 @@ import { Component } from '@angular/core';
             </div>
             <div class="home-button-container">
                 <button class="home-button" [routerLink]="['/home/']">Home</button>
+                <button class="home-button" [routerLink]="['/employee/']">Employee Page</button>
             </div>
         </div>
     `
 })
-export class AppComponent { 
-    
+export class AppComponent {
+
 }

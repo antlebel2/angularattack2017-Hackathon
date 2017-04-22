@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-    template: `<h1>Employee Component</h1>`
+    templateUrl: 'app/employee.component.html'
 })
-export class EmployeeComponent { 
+export class EmployeeComponent {
 
 }
