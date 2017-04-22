@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './home.component';
 import { EmployeeComponent } from './employee.component';
-import { EmployerComponent } from './employer.component';
+import { EmployerBioComponent } from './employerBio.component';
 
 @NgModule({
   imports: [ 
@@ -15,7 +15,7 @@ import { EmployerComponent } from './employer.component';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'employee', component: EmployeeComponent },
-      { path: 'employer', component: EmployerComponent },
+      { path: 'employer/bio', component: EmployerBioComponent },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]) 
   ],
@@ -23,7 +23,7 @@ import { EmployerComponent } from './employer.component';
     AppComponent, 
     HomeComponent ,
     EmployeeComponent,
-    EmployerComponent
+    EmployerBioComponent
   ],
   bootstrap: [ 
     AppComponent

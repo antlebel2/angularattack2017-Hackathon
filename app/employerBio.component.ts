@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
-    template: `
+    template: 
+    `
     <div class="component-title">
         You have chosen to learn more about the company you work for.
     </div>
@@ -30,6 +32,12 @@ import { Component } from '@angular/core';
     </div>
     `
 })
-export class EmployerComponent { 
-
+export class EmployerBioComponent { 
+    private _companyEndpoint = '';
+    
+    constructor(private _http: Http){ }
+    
+    getProducts() {
+        return this._http.get(this._companyEndpoint);
+    }
 }
