@@ -5,9 +5,4 @@ import {Http} from '@angular/http';
     templateUrl: 'app/employee.component.html'
 })
 export class EmployeeComponent {
-  $scope.data = true;
-  $scope.social = true;
-  $scope.facebook = true;
-  $scope.twitter = true;
-  $scope.linkedin = true;
 }
