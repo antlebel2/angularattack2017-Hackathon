@@ -35,21 +35,70 @@ export class EmployerApiPromiseService {
 
     private extractData(res: Response) {
         let body = res.json();
-        if(!body)
-            return {};
             
-        //hydrate - todo null if moved to function??!!??
-        var _companyDetail = new EmployerDto();
-        _companyDetail.name = body.organization.name;
-        
-        if(body.organization.contactInfo.addresses){
-            _companyDetail.city = body.organization.contactInfo.addresses[0].locality;
-            _companyDetail.stateCode = body.organization.contactInfo.addresses[0].region.code;
+        if(!body || body.status != '200'){
+            return null; //no company found for that domain
         }
         
-        if(body.organization.contactInfo.phoneNumbers)
-            _companyDetail.phoneNumber =body.organization.contactInfo.phoneNumbers[0]['number'];
-            
+        var _companyDetail = new EmployerDto();
+        
+        //---summary---
+        var name = body.organization.name;
+        var addresses = body.organization.contactInfo.addresses;
+        var logoUrl = body.logo;
+        var phoneNumbers = body.organization.contactInfo.phoneNumbers;
+        
+        _companyDetail.summary = {   
+            name: typeof name != 'undefined' 
+                ? name : '',
+            city: typeof addresses[0].locality != 'undefined'
+                ? addresses[0].locality : '',
+            stateCode: typeof addresses[0].region.code != 'undefined'
+                ? addresses[0].region.code : '',
+            //todo - traverse through photos for logo label and reference that
+            logoUrl: typeof logoUrl != 'undefined' 
+                ? logoUrl : '', //todo - place a default assets image for falsy logo
+            phoneNumber: typeof phoneNumbers != 'undefined'
+                ? phoneNumbers[0]['number'] : ''
+        };
+        
+        //---web stats---
+        var onlineSince = body.onlineSince;
+        var trafficRanking = body.traffic.ranking;
+        var keywords = body.organization.keywords;
+        
+        _companyDetail.webStats = {     
+            onlineSince: typeof onlineSince != 'undefined'
+                ? onlineSince : 'N/A', //todo - parse date to nice UI
+            keywords: typeof keywords != 'undefined'
+                ? keywords : [],
+            trafficRanking: typeof trafficRanking != 'undefined'
+                ? trafficRanking : []
+        }; 
+         
+       //---social media---
+        var socialProfiles = body.socialProfiles;
+        
+        _companyDetail.socialMedia = {     
+            profiles: typeof socialProfiles != 'undefined' 
+                ? socialProfiles : []
+       };
+       
+        //---extended summary---
+        var founded = body.organization.founded;
+        var overview = body.organization.overview;
+        var numberOfEmployees = body.organization.approxEmployees;
+        
+        _companyDetail.extendedSummary = {
+            addresses: typeof addresses != 'undefined'
+                ? addresses : [],
+            founded: typeof founded != 'undefined'
+                ? founded : 'N/A',            
+            numberOfEmployees: typeof numberOfEmployees != 'undefined'
+                ? numberOfEmployees : 'N/A',
+            overview: typeof overview != 'undefined'
+                ? overview : 'Sorry, no overview found.'
+        };
         return _companyDetail;
         //end hydrate;
     }

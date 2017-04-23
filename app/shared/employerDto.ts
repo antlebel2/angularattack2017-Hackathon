@@ -1,17 +1,26 @@
 export class EmployerDto {
-    name: string;
-    city: string;
-    address: string;
-    stateCode: string;  
-    phoneNumber: string;
-    onlineSince: string;
-    keywords: string;
-    trafficRank: string;
-    founded: string;
-    numEmployees: string;
-    summary: string;
-    fbURI: string;
-    twittURI: string;
-    linkURI: string;
-    logoPic: string;
+    summary: {
+        name: any;
+        city: any;
+        stateCode: any;
+        phoneNumber: any;
+        logoUrl: any;
+    }
+    
+    extendedSummary: {
+        addresses: any[];
+        founded: any;
+        numberOfEmployees: any;
+        overview: any;
+    }
+    
+    webStats: {
+        onlineSince: any;
+        keywords: any[];
+        trafficRanking: any[];
+    }
+    
+    socialMedia: {
+        profiles: any[]
+    }
 }
