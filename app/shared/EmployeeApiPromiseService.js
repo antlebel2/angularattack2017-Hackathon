@@ -18,7 +18,7 @@ var EmployeeApiPromiseService = (function () {
     function EmployeeApiPromiseService(http, route) {
         this.http = http;
         this.route = route;
-        this.APIKEY = 'c0402b24ca6234';
+        this.APIKEY = 'cd7142feb70b5859';
         this._employeeEmail = '&email=';
         this._employeeEndpoint = 'https://api.fullcontact.com/v2/person.json?apiKey=' + this.APIKEY;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json',
