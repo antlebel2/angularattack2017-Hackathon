@@ -1,11 +1,11 @@
 <div class="component-title">
     You have chosen to learn more about the company you work for.
 </div>
-<div class="component-header">
-    {{_companyDetail?.summary?.name}} - {{_companyDetail?.summary?.city}}, {{_companyDetail?.summary?.stateCode}} {{_companyDetail?.summary?.phoneNumber}}
-</div>
 <div class="component-header-container">
      <img [src]="_companyDetail?.summary?.logoUrl" class="component-header-image"/>
+</div>
+<div class="component-header">
+    {{_companyDetail?.summary?.name}} - {{_companyDetail?.summary?.city}}, {{_companyDetail?.summary?.stateCode}} {{_companyDetail?.summary?.phoneNumber}}
 </div>
 <div class="component-content">
     <!--<div class="component-content-right">-->
@@ -21,8 +21,7 @@
     </div>-->
 </div>
 <br />
-<br />
-<div class="component-button-container">
+<div class="component-button-container" style="margin-top:0%">
     <button [routerLink]="['/employer/webStats']" [queryParams]="{companyDomain: _companyDomain}">
         <i class="fa fa-line-chart fa-lg"></i> 
         Website Stats
