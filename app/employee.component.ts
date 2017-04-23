@@ -5,4 +5,5 @@ import {Http} from '@angular/http';
     templateUrl: 'app/employee.component.html'
 })
 export class EmployeeComponent {
+    
 }

@@ -10,14 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
 var EmployerBioComponent = (function () {
-    function EmployerBioComponent(_http) {
+    function EmployerBioComponent(_http, route) {
         this._http = _http;
-        this._companyEndpoint = '';
+        this.route = route;
+        this.APIKEY = 'c0402b24ca6234';
+        this._companyDomain = '&domain=';
+        this._companyEndpoint = 'https://api.fullcontact.com/v2/company/lookup.json?apiKey=' + this.APIKEY;
+        this.companyDetail = {};
     }
-    EmployerBioComponent.prototype.getProducts = function () {
-        return this._http.get(this._companyEndpoint);
+    EmployerBioComponent.prototype.ngOnInit = function () {
+        this._companyDomain += this.route.snapshot.queryParams['companyDomain'];
+        this._companyEndpoint += this._companyDomain;
+        this.getCompanyDetail();
+    };
+    EmployerBioComponent.prototype.getCompanyDetail = function () {
+        var _this = this;
+        return this._http.get(this._companyEndpoint)
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data) { return _this.companyDetail = data; });
     };
     return EmployerBioComponent;
 }());
@@ -25,7 +39,8 @@ EmployerBioComponent = __decorate([
     core_1.Component({
         templateUrl: 'app/employerBio.component.html'
     }),
-    __metadata("design:paramtypes", [http_1.Http])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute])
 ], EmployerBioComponent);
 exports.EmployerBioComponent = EmployerBioComponent;
 //# sourceMappingURL=employerBio.component.js.map

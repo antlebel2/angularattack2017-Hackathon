@@ -30,7 +30,7 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
   ],
   declarations: [ 
     AppComponent, 
-    HomeComponent ,
+    HomeComponent,
     EmployeeComponent,
     EmployerComponent,
     EmployerSelectedComponent,
