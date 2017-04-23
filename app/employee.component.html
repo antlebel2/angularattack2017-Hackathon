@@ -1,12 +1,20 @@
 <div class="component-title">
-  You have chosen to learn more about a person. <br />
-  (Person Name) - (Location - region)
+  You have chosen to learn more about a person.
+</div>
+<div class="component-header">
+  {{_personDetail.name}} - {{_personDetail.city}} - {{_personDetail.address}}
 </div>
 
 <div ng-hide="data">
   <img src="" />
   <div class="component-header">
     <i class="fa fa-user-circle-o fa-5x"></i>
+  </div>
+  <div ng-hide="personalInfo" class="component-header">
+    Phone Number: {{_personDetail.name}} <br />
+    Works For: {{_personDetail.worksFor}} <br />
+    Last Job: {{_personDetail.lastJob}} <br />
+    Online Since: {{_personDetail.onlineSince}} <br />
   </div>
   <div ng-hide="social" class="component-header">Social Media Presence:</div>
   <div>
@@ -18,15 +26,10 @@
   <div>
     <a href="link1"><i class="fa fa-globe fa-5x"></i></a>
     <a href="link2"><i class="fa fa-globe fa-5x"></i></a>
-</div>
+  </div>
 <br />
+
 <div ng-hide="!data" class="component-header">
   <i class="fa fa-rebel fa-5x"></i> <br />
   This person is off the grid!
 </div>
-<div >
-        <input type="button" value="Show Hide DIV" ng-click="ShowHide()" />
-        <br />
-        <br />
-        <div ng-show = "IsVisible">My DIV</div>
-    </div>

@@ -57,4 +57,4 @@ EmployeeApiPromiseService = __decorate([
     __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute])
 ], EmployeeApiPromiseService);
 exports.EmployeeApiPromiseService = EmployeeApiPromiseService;
-//# sourceMappingURL=EmployeeApiPromiseService.js.map
+//# sourceMappingURL=employeeApiPromiseService.js.map
