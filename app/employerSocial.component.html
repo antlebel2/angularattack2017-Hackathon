@@ -29,15 +29,15 @@
 <br />
 <br />
 <div class="component-button-container">
-    <button [routerLink]="['/employer']">
+    <button [routerLink]="['/employer/webStats']" [queryParams]="{companyDomain: _companyDomain}">
         <i class="fa fa-line-chart fa-lg"></i> 
         Website Stats
     </button>
-    <button [routerLink]="['/employer/social']">
+    <button [routerLink]="['/employer/socialMedia']" [queryParams]="{companyDomain: _companyDomain}">
         <i class="fa fa-facebook fa-lg"></i> 
         Social Presence
     </button>
-    <button [routerLink]="['/employer/bio']">
+    <button [routerLink]="['/employer/bio']" [queryParams]="{companyDomain: _companyDomain}">
         <i class="fa fa-search-plus fa-lg"></i> 
         Find Out More
     </button>       

@@ -23,8 +23,8 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
       { path: 'employer', component: EmployerComponent},
       { path: 'employerSelected', component: EmployerSelectedComponent },
       { path: 'employeeSelected', component: EmployeeSelectedComponent },
-      { path: 'employer/social', component: EmployerSocialComponent },
-      { path: 'employer/webStatistics', component: EmployerWebComponent },
+      { path: 'employer/socialMedia', component: EmployerSocialComponent },
+      { path: 'employer/webStats', component: EmployerWebComponent },
       { path: 'employer/bio', component: EmployerBioComponent },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]) 

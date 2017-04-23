@@ -35,8 +35,8 @@ AppModule = __decorate([
                 { path: 'employer', component: employer_component_1.EmployerComponent },
                 { path: 'employerSelected', component: employerSelected_component_1.EmployerSelectedComponent },
                 { path: 'employeeSelected', component: employeeSelected_component_1.EmployeeSelectedComponent },
-                { path: 'employer/social', component: employerSocial_component_1.EmployerSocialComponent },
-                { path: 'employer/webStatistics', component: employerWeb_component_1.EmployerWebComponent },
+                { path: 'employer/socialMedia', component: employerSocial_component_1.EmployerSocialComponent },
+                { path: 'employer/webStats', component: employerWeb_component_1.EmployerWebComponent },
                 { path: 'employer/bio', component: employerBio_component_1.EmployerBioComponent },
                 { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ])

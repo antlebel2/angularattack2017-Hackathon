@@ -10,19 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
+var employerApiPromiseService_1 = require("./shared/employerApiPromiseService");
+var employerDto_1 = require("./shared/employerDto");
 var EmployerBioComponent = (function () {
-    function EmployerBioComponent(route) {
-        this.route = route;
+    function EmployerBioComponent(_employerPromiseService) {
+        this._employerPromiseService = _employerPromiseService;
     }
+    EmployerBioComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._companyDetail = new employerDto_1.EmployerDto();
+        this._employerPromiseService.getService()
+            .then(function (companyDetail) { return _this._companyDetail = companyDetail; })
+            .catch(function (error) { return console.log(error); });
+        this._companyDomain = this._employerPromiseService.getQueryParam();
+    };
     return EmployerBioComponent;
 }());
 EmployerBioComponent = __decorate([
     core_1.Component({
-        templateUrl: 'app/employerBio.component.html'
+        templateUrl: 'app/employerBio.component.html',
+        providers: [employerApiPromiseService_1.EmployerApiPromiseService]
     }),
     core_1.Injectable(),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [employerApiPromiseService_1.EmployerApiPromiseService])
 ], EmployerBioComponent);
 exports.EmployerBioComponent = EmployerBioComponent;
 //# sourceMappingURL=employerBio.component.js.map

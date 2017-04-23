@@ -1,32 +1,26 @@
 import { Component, Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { EmployerApiPromiseService } from './shared/employerApiPromiseService';
+import { EmployerDto } from './shared/employerDto';
 
 @Component({
-    templateUrl: 'app/employerWeb.component.html'
+    templateUrl: 'app/employerWeb.component.html',
+    providers: [ EmployerApiPromiseService ]
 })
 
 @Injectable()
 export class EmployerWebComponent { 
-    private APIKEY = 'c0402b24ca6234';
-    private _companyDomain = '&domain=';
-    private _companyEndpoint = 'https://api.fullcontact.com/v2/company/lookup.json?apiKey=' + this.APIKEY;
+    private _companyDetail:EmployerDto;
+    private _companyDomain:any;
     
-    constructor(private _http: Http, private route: ActivatedRoute){ 
-    }
+    constructor(private _employerPromiseService: EmployerApiPromiseService){ }
     
     ngOnInit() {
-        this._companyDomain += this.route.snapshot.queryParams['companyDomain'];
-        this._companyEndpoint += this._companyDomain;
-        this.getCompanyDetail();
+        this._companyDetail = new EmployerDto();
+
+        this._employerPromiseService.getService()
+        .then(companyDetail => this._companyDetail = companyDetail)
+        .catch(error => console.log(error));
+        
+        this._companyDomain = this._employerPromiseService.getQueryParam();
     }
-    
-    private getCompanyDetail() {
-        return this._http.get(this._companyEndpoint)
-        .map((res:Response) => res.json())
-        .subscribe(data => this.companyDetail = data);
-    }
-    
-    companyDetail = {};
 }

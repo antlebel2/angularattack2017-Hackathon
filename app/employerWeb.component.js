@@ -10,37 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
+var employerApiPromiseService_1 = require("./shared/employerApiPromiseService");
+var employerDto_1 = require("./shared/employerDto");
 var EmployerWebComponent = (function () {
-    function EmployerWebComponent(_http, route) {
-        this._http = _http;
-        this.route = route;
-        this.APIKEY = 'c0402b24ca6234';
-        this._companyDomain = '&domain=';
-        this._companyEndpoint = 'https://api.fullcontact.com/v2/company/lookup.json?apiKey=' + this.APIKEY;
-        this.companyDetail = {};
+    function EmployerWebComponent(_employerPromiseService) {
+        this._employerPromiseService = _employerPromiseService;
     }
     EmployerWebComponent.prototype.ngOnInit = function () {
-        this._companyDomain += this.route.snapshot.queryParams['companyDomain'];
-        this._companyEndpoint += this._companyDomain;
-        this.getCompanyDetail();
-    };
-    EmployerWebComponent.prototype.getCompanyDetail = function () {
         var _this = this;
-        return this._http.get(this._companyEndpoint)
-            .map(function (res) { return res.json(); })
-            .subscribe(function (data) { return _this.companyDetail = data; });
+        this._companyDetail = new employerDto_1.EmployerDto();
+        this._employerPromiseService.getService()
+            .then(function (companyDetail) { return _this._companyDetail = companyDetail; })
+            .catch(function (error) { return console.log(error); });
+        this._companyDomain = this._employerPromiseService.getQueryParam();
     };
     return EmployerWebComponent;
 }());
 EmployerWebComponent = __decorate([
     core_1.Component({
-        templateUrl: 'app/employerWeb.component.html'
+        templateUrl: 'app/employerWeb.component.html',
+        providers: [employerApiPromiseService_1.EmployerApiPromiseService]
     }),
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [employerApiPromiseService_1.EmployerApiPromiseService])
 ], EmployerWebComponent);
 exports.EmployerWebComponent = EmployerWebComponent;
 //# sourceMappingURL=employerWeb.component.js.map
