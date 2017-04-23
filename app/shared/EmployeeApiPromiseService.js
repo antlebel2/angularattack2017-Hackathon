@@ -52,7 +52,7 @@ var EmployeeApiPromiseService = (function () {
         var gender = body.demographics.gender;
         var photos = body.photos;
         var socialProfiles = body.socialProfiles;
-        var websites = body.websites;
+        var websites = body.contactInfo.websites;
         _employeeDetail.fullName = typeof fullName != 'undefined'
             ? fullName : '';
         _employeeDetail.location = typeof location != 'undefined'

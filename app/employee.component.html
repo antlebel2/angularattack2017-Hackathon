@@ -4,18 +4,20 @@
 <div class="component-header">
   {{_personDetail?.fullName}} - {{_personDetail?.gender}} - {{_personDetail?.location}}
 </div>
-
-<div ng-hide="data">
-  <img src="" />
-  <div class="component-header">
-    <i class="fa fa-user-circle-o fa-5x"></i>
+<div class="component-header-container">
+    <img [src]="_personDetail?.photoUrl" class="component-header-image"/>
+</div>
+<div class="component-content">
+  <div class="component-content-left">
+    <div class="component-content-data-header">Social Presence: </div>
+    <div class="component-content-data-header">Websites: </div>
   </div>
-  <div class="component-header">
-    Phone Number: {{_personDetail?.fullName}} <br />
-    Works For: {{_personDetail.worksFor}} <br />
-    Last Job: {{_personDetail.lastJob}} <br />
-    Online Since: {{_personDetail.onlineSince}} <br />
+  <div class="component-content-right component-content-link-container">
+    <div class="component-content-link" *ngFor='let i of _personDetail.websites'>
+      <a [href]="i.url"><i class="fa fa-globe fa-lg component-content-link"></i></a>
+    </div>
   </div>
+</div>
   <div ng-if="_personDetail.socialMediaProfiles" class="component-header">Social Media Presence:</div>
   <div>
     <a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-5x" style="color: #3b5998"></i></a>
@@ -23,8 +25,3 @@
     <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-5x" style="color: #007bb6"></i></a>
   </div>
   <div ng-if="_personDetail.websites" class="component-header">Websites:</div>
-  <div>
-    <a href="link1"><i class="fa fa-globe fa-5x"></i></a>
-    <a href="link2"><i class="fa fa-globe fa-5x"></i></a>
-  </div>
-<br />
