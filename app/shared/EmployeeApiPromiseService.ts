@@ -28,6 +28,10 @@ export class EmployeeApiPromiseService {
             .then(this.extractData)
             .catch(this.handleError);
     }
+    
+    getQueryParam(){
+        return this.route.snapshot.queryParams['employeeEmail'];
+    }
 
     private extractData(res: Response) {
         let body = res.json();

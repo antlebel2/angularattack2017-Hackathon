@@ -34,6 +34,9 @@ var EmployerApiPromiseService = (function () {
             .then(this.extractData)
             .catch(this.handleError);
     };
+    EmployerApiPromiseService.prototype.getQueryParam = function () {
+        return this.route.snapshot.queryParams['companyDomain'];
+    };
     EmployerApiPromiseService.prototype.extractData = function (res) {
         var body = res.json();
         if (!body)

@@ -22,6 +22,7 @@ var EmployerComponent = (function () {
         this._employerPromiseService.getService()
             .then(function (companyDetail) { return _this._companyDetail = companyDetail; })
             .catch(function (error) { return console.log(error); });
+        this._companyDomain = this._employerPromiseService.getQueryParam();
     };
     return EmployerComponent;
 }());

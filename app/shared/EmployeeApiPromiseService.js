@@ -34,6 +34,9 @@ var EmployeeApiPromiseService = (function () {
             .then(this.extractData)
             .catch(this.handleError);
     };
+    EmployeeApiPromiseService.prototype.getQueryParam = function () {
+        return this.route.snapshot.queryParams['employeeEmail'];
+    };
     EmployeeApiPromiseService.prototype.extractData = function (res) {
         var body = res.json();
         if (!body)

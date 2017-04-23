@@ -11,6 +11,7 @@ import { EmployerDto } from './shared/employerDto';
 @Injectable()
 export class EmployerComponent{
     private _companyDetail:EmployerDto;
+    private _companyDomain:any;
     
     constructor(private _employerPromiseService: EmployerApiPromiseService){ }
     
@@ -20,5 +21,7 @@ export class EmployerComponent{
         this._employerPromiseService.getService()
         .then(companyDetail => this._companyDetail = companyDetail)
         .catch(error => console.log(error));
+        
+        this._companyDomain = this._employerPromiseService.getQueryParam();
     }
 }

@@ -28,6 +28,10 @@ export class EmployerApiPromiseService {
             .then(this.extractData)
             .catch(this.handleError);
     }
+    
+    getQueryParam(){
+        return this.route.snapshot.queryParams['companyDomain'];
+    }
 
     private extractData(res: Response) {
         let body = res.json();
