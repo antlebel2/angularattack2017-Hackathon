@@ -1,19 +1,28 @@
 <div class="component-title">
-  You have chosen to learn more about a person. Looking for dirty laundry? <br />
-  (Co-worker Name) - (Location - region) - (Known phone number)
+  You have chosen to learn more about a person. <br />
+  (Person Name) - (Location - region)
 </div>
--->{{data}}<--
-<div ng-hide="data" class="component-header">
+
+<div ng-hide="data">
   <img src="" />
-  <div class="component-content-data">Name:</div>
-  <div ng-hide="social" class="component-content-data-header">Social Media Presense:</div>
-  <div ng-hide="facebook" class="component-content-data">Facebook:</div>
-  <div ng-hide="twitter" class="component-content-data">Twitter:</div>
-  <div ng-hide="linkedin" class="component-content-data">LinkedIn:</div>
-  <div ng-hide="etc" class="component-content-data">etc:</div>
+  <div class="component-header">
+    <i class="fa fa-user-circle-o fa-5x"></i>
+  </div>
+  <div ng-hide="social" class="component-header">Social Media Presence:</div>
+  <div>
+    <a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-5x" style="color: #3b5998"></i></a>
+    <a href="https://www.twitter.com"><i class="fa fa-twitter-square fa-5x" style="color: #00aced"></i></a>
+    <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-5x" style="color: #007bb6"></i></a>
+  </div>
+  <div ng-hide="websites" class="component-header">Websites:</div>
+  <div>
+    <a href="link1"><i class="fa fa-globe fa-5x"></i></a>
+    <a href="link2"><i class="fa fa-globe fa-5x"></i></a>
 </div>
+<br />
 <div ng-hide="!data" class="component-header">
-  Co-Worker is off the grid!
+  <i class="fa fa-rebel fa-5x"></i> <br />
+  This person is off the grid!
 </div>
 <div >
         <input type="button" value="Show Hide DIV" ng-click="ShowHide()" />
