@@ -7,7 +7,7 @@ import { AppComponent }  from './app.component';
 import { HomeComponent } from './home.component';
 import { EmployeeComponent } from './employee.component';
 import { EmployerComponent } from './employer.component';
-import { EmployerBioComponent } from './employerBio.component';
+import { EmployerWebComponent } from './employerWeb.component';
 
 import { EmployerSelectedComponent } from './employerSelected.component';
 import { EmployeeSelectedComponent } from './employeeSelected.component';
@@ -22,7 +22,7 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
       { path: 'employer', component: EmployerComponent},
       { path: 'employerSelected', component: EmployerSelectedComponent },
       { path: 'employeeSelected', component: EmployeeSelectedComponent },
-      { path: 'employer/bio', component: EmployerBioComponent },
+      { path: 'employer/webStatistics', component: EmployerWebComponent },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]) 
   ],
@@ -33,7 +33,7 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
     EmployerComponent,
     EmployerSelectedComponent,
     EmployeeSelectedComponent,
-    EmployerBioComponent
+    EmployerWebComponent
   ],
   bootstrap: [ 
     AppComponent
