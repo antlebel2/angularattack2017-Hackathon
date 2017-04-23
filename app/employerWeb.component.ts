@@ -4,11 +4,11 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Component({
-    templateUrl: 'app/employerBio.component.html'
+    templateUrl: 'app/employerWeb.component.html'
 })
 
 @Injectable()
-export class EmployerBioComponent { 
+export class EmployerWebComponent { 
     private APIKEY = 'c0402b24ca6234';
     private _companyDomain = '&domain=';
     private _companyEndpoint = 'https://api.fullcontact.com/v2/company/lookup.json?apiKey=' + this.APIKEY;

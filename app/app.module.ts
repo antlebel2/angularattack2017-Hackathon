@@ -7,7 +7,12 @@ import { AppComponent }  from './app.component';
 import { HomeComponent } from './home.component';
 import { EmployeeComponent } from './employee.component';
 import { EmployerComponent } from './employer.component';
+<<<<<<< HEAD
 import { EmployerBioComponent } from './employerBio.component';
+import { EmployerSocialComponent } from './employerSocial.component';
+=======
+import { EmployerWebComponent } from './employerWeb.component';
+>>>>>>> 305c005142ec8dd736107e80d145e09f861ff9a6
 
 import { EmployerSelectedComponent } from './employerSelected.component';
 import { EmployeeSelectedComponent } from './employeeSelected.component';
@@ -22,7 +27,12 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
       { path: 'employer', component: EmployerComponent},
       { path: 'employerSelected', component: EmployerSelectedComponent },
       { path: 'employeeSelected', component: EmployeeSelectedComponent },
+<<<<<<< HEAD
       { path: 'employer/bio', component: EmployerBioComponent },
+      { path: 'employer/social', component: EmployerSocialComponent },
+=======
+      { path: 'employer/webStatistics', component: EmployerWebComponent },
+>>>>>>> 305c005142ec8dd736107e80d145e09f861ff9a6
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]) 
   ],
@@ -33,7 +43,12 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
     EmployerComponent,
     EmployerSelectedComponent,
     EmployeeSelectedComponent,
-    EmployerBioComponent
+<<<<<<< HEAD
+    EmployerBioComponent,
+    EmployerSocialComponent
+=======
+    EmployerWebComponent
+>>>>>>> 305c005142ec8dd736107e80d145e09f861ff9a6
   ],
   bootstrap: [ 
     AppComponent
