@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class EmployeeApiPromiseService {
-    private APIKEY = 'c0402b24ca6234';
+    private APIKEY = 'cd7142feb70b5859';
     private _employeeEmail = '&email=';
     private _employeeEndpoint = 'https://api.fullcontact.com/v2/person.json?apiKey=' + this.APIKEY;
     
