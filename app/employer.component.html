@@ -2,7 +2,7 @@
     You have chosen to learn more about a company.
 </div>
 <div class="component-header">
-    {{companyDetail?.organization?.name}} - {{companyDetail?.organization?.contactInfo?.addresses[0]?.locality}}, {{companyDetail?.organization?.contactInfo?.addresses[0]?.region?.code}} {{companyDetail?.organization?.contactInfo?.phoneNumbers[0]?.region?.code}}
+    {{_companyDetail.name}} - {{_companyDetail.city}}, {{_companyDetail.stateCode}} {{_companyDetail.phoneNumber}}
 </div>
 <div class="component-header-container">
     <img src="/app/assets/images/company.jpg" class="component-header-image"/>
