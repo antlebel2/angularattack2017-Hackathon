@@ -16,6 +16,7 @@ var employee_component_1 = require("./employee.component");
 var employer_component_1 = require("./employer.component");
 var employerSocial_component_1 = require("./employerSocial.component");
 var employerWeb_component_1 = require("./employerWeb.component");
+var employerBio_component_1 = require("./employerBio.component");
 var employerSelected_component_1 = require("./employerSelected.component");
 var employeeSelected_component_1 = require("./employeeSelected.component");
 var AppModule = (function () {
@@ -36,6 +37,7 @@ AppModule = __decorate([
                 { path: 'employeeSelected', component: employeeSelected_component_1.EmployeeSelectedComponent },
                 { path: 'employer/social', component: employerSocial_component_1.EmployerSocialComponent },
                 { path: 'employer/webStatistics', component: employerWeb_component_1.EmployerWebComponent },
+                { path: 'employer/bio', component: employerBio_component_1.EmployerBioComponent },
                 { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ])
         ],
@@ -47,7 +49,8 @@ AppModule = __decorate([
             employerSelected_component_1.EmployerSelectedComponent,
             employeeSelected_component_1.EmployeeSelectedComponent,
             employerSocial_component_1.EmployerSocialComponent,
-            employerWeb_component_1.EmployerWebComponent
+            employerWeb_component_1.EmployerWebComponent,
+            employerBio_component_1.EmployerBioComponent
         ],
         bootstrap: [
             app_component_1.AppComponent
