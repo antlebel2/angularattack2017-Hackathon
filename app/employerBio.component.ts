@@ -1,14 +1,26 @@
 import { Component, Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { EmployerApiPromiseService } from './shared/employerApiPromiseService';
 import { EmployerDto } from './shared/employerDto';
 
 @Component({
-    templateUrl: 'app/employerBio.component.html'
+    templateUrl: 'app/employerBio.component.html',
+    providers: [ EmployerApiPromiseService ]
 })
 
 @Injectable()
 export class EmployerBioComponent{
+    private _companyDetail:EmployerDto;
+    private _companyDomain:any;
     
-    constructor(private route: ActivatedRoute){ }
+    constructor(private _employerPromiseService: EmployerApiPromiseService){ }
 
+    ngOnInit() {
+        this._companyDetail = new EmployerDto();
+
+        this._employerPromiseService.getService()
+        .then(companyDetail => this._companyDetail = companyDetail)
+        .catch(error => console.log(error));
+        
+        this._companyDomain = this._employerPromiseService.getQueryParam();
+    }
 }

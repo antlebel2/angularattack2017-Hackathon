@@ -1,5 +1,4 @@
 import { Component, Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { EmployerApiPromiseService } from './shared/employerApiPromiseService';
 import { EmployerDto } from './shared/employerDto';
 
