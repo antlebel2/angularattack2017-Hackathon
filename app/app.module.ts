@@ -26,7 +26,7 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
   ],
   declarations: [ 
     AppComponent, 
-    HomeComponent ,
+    HomeComponent,
     EmployeeComponent,
     EmployerSelectedComponent,
     EmployeeSelectedComponent,

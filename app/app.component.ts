@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
                 <button class="home-button" [routerLink]="['/employee/']">Employee Page</button>
             </div>
         </div>
-    `
+    `,
 })
 export class AppComponent {
 
