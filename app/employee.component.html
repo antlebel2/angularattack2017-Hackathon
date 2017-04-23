@@ -12,11 +12,9 @@
     <div class="component-content-data-header">Social Presence: </div>
     <div class="component-content-data-header">Websites: </div>
   </div>
-  <div class="component-content-right">
-    <div class="component-content-data">
-      <div *ngFor='let i of _personDetail.websites'>
-        <a [href]="i.url"><i class="fa fa-globe fa-5x"></i></a>
-      </div>
+  <div class="component-content-right component-content-link-container">
+    <div class="component-content-link" *ngFor='let i of _personDetail.websites'>
+      <a [href]="i.url"><i class="fa fa-globe fa-lg component-content-link"></i></a>
     </div>
   </div>
 </div>

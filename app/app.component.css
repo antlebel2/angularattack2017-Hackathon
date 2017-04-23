@@ -103,6 +103,17 @@ button:focus {
     margin-top: 10px;
 }
 
+.component-content-link {
+    margin-top: 2px;
+    margin-left: 10px;
+    min-height: 28px;
+    float:left;
+}
+
+component-content-link-container {
+    min-height: 200px;
+}
+
 .form-input-text {
     width: 400px; 
     text-align:center; 
