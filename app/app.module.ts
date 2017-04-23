@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './home.component';
 import { EmployeeComponent } from './employee.component';
+import { EmployerComponent } from './employer.component';
 import { EmployerBioComponent } from './employerBio.component';
 
 import { EmployerSelectedComponent } from './employerSelected.component';
@@ -18,6 +19,7 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'employee', component: EmployeeComponent },
+      { path: 'employer', component: EmployerComponent},
       { path: 'employerSelected', component: EmployerSelectedComponent },
       { path: 'employeeSelected', component: EmployeeSelectedComponent },
       { path: 'employer/bio', component: EmployerBioComponent },
@@ -28,6 +30,7 @@ import { EmployeeSelectedComponent } from './employeeSelected.component';
     AppComponent, 
     HomeComponent,
     EmployeeComponent,
+    EmployerComponent,
     EmployerSelectedComponent,
     EmployeeSelectedComponent,
     EmployerBioComponent
