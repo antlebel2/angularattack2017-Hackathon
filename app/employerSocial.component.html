@@ -2,10 +2,10 @@
     You have chosen to learn more about a company.
 </div>
 <div class="component-header">
-    (Organization Name) - (Locality, region:code) (1st phone #)
+     {{_companyDetail?.summary?.name}} - {{_companyDetail?.summary?.city}}, {{_companyDetail?.summary?.stateCode}} {{_companyDetail?.summary?.phoneNumber}}
 </div>
 <div class="component-header-container">
-    <img class="component-header-image" />
+    <img [src]="_companyDetail?.summary?.logoUrl" class="component-header-image"/>
 </div>
 <!--<div class="component-content">
     <div class="component-content-left">
@@ -22,9 +22,9 @@
 <br />
 <br />
 <div>
-    <a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-5x" style="color: #3b5998"></i></a>
-    <a href="https://www.twitter.com"><i class="fa fa-twitter-square fa-5x" style="color: #00aced"></i></a>
-    <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-5x" style="color: #007bb6"></i></a>
+    <a href="{{_companyDetail?.socialMedia?.profiles[0].url}}"><i class="fa fa-facebook-square fa-5x" style="color: #3b5998"></i></a>
+    <a href="{{_companyDetail?.socialMedia?.profiles[1].url}}"><i class="fa fa-twitter-square fa-5x" style="color: #00aced"></i></a>
+    <a href="{{_companyDetail?.socialMedia?.profiles[3].url}}"><i class="fa fa-linkedin-square fa-5x" style="color: #007bb6"></i></a>
 </div>
 <br />
 <br />

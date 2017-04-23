@@ -2,22 +2,23 @@
     You have chosen to learn more about the company you work for.
 </div>
 <div class="component-header">
-    (Organization Name) - (Locality, region:code) (1st phone #)
+    {{_companyDetail?.summary?.name}} - {{_companyDetail?.summary?.city}}, {{_companyDetail?.summary?.stateCode}} {{_companyDetail?.summary?.phoneNumber}}
 </div>
 <div class="component-header-container">
-    <img class="component-header-image" />
+     <img [src]="_companyDetail?.summary?.logoUrl" class="component-header-image"/>
 </div>
 <div class="component-content">
-    <div class="component-content-left">
-        <div class="component-content-data-header">Online since: </div>
-        <div class="component-content-data-header">Keywords: </div>
-        <div class="component-content-data-header">Traffic Ranking: </div>
-    </div>
+    <!--<div class="component-content-right">-->
+        <div class="component-content-data-header">Online since: {{_companyDetail?.webStats?.onlineSince}}</div>
+        <div class="component-content-data-header" style="overflow:hidden; white-space:nowrap">Keywords: {{_companyDetail?.webStats?.keywords}}</div>
+        <div class="component-content-data-header">Traffic Ranking: {{_companyDetail?.webStats?.trafficRanking[0].rank}}</div>
+    <!--</div>-->
+    <!--
     <div class="component-content-right">
         <div class="component-content-data">{{ companyDetail | json }}</div>
         <div class="component-content-data">Keywords: </div>
         <div class="component-content-data">Traffic Ranking: </div>
-    </div>
+    </div>-->
 </div>
 <br />
 <br />
