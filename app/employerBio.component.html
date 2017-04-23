@@ -2,12 +2,17 @@
     You have chosen to learn more about a company.
 </div>
 <div class="component-header">
-    {{_companyDetail.name}} - {{_companyDetail.city}}, {{_companyDetail.stateCode}} {{_companyDetail.phoneNumber}}
+    (Organization Name) - (Locality, region:code) (1st phone #)
 </div>
 <div class="component-header-container">
-    <img src="/app/assets/images/company.jpg" class="component-header-image"/>
+    <img class="component-header-image"/>
 </div>
-<br />
+<div class="component-content">
+    <div class="component-content-data-header">Founded: component.founded </div>
+    <div class="component-content-data-header">Estimated Employees: component.employees </div>
+    <div class="component-content-data-header">Summary: component.overview </div>
+    <div class="component-content-data-header">Mailing Address: component.mailAddr </div>
+</div>
 <div class="component-button-container">
     <button [routerLink]="['/employer']">
         <i class="fa fa-line-chart fa-lg"></i> 
