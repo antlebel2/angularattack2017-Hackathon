@@ -35,12 +35,42 @@ export class EmployeeApiPromiseService {
 
     private extractData(res: Response) {
         let body = res.json();
-        if(!body)
-            return {};
+        if(!body || body.status != '200'){
+            return null;
+        }
             
-        //hydrate - todo null if moved to function??!!??
+        //hydrate
         var _employeeDetail = new EmployeeDto();
+        
+        //_companyDetail.summary = {   
+        //    name: typeof name != 'undefined' 
+        //        ? name : '',
+        
+        var fullName = body.contactInfo.fullName;
+        var location = body.demographics.locationGeneral;
+        var gender = body.demographics.gender;
+        var photos = body.photos;
+        var socialProfiles = body.socialProfiles;
+        var websites = body.websites;
+        
+        _employeeDetail.fullName = typeof fullName != 'undefined'
+            ? fullName : ''; 
+            
+        _employeeDetail.location = typeof location != 'undefined'
+            ? location : 'N/A';
+            
+        _employeeDetail.gender = typeof gender != 'undefined'
+            ? gender : 'N/A';
+            
+        _employeeDetail.photoUrl = typeof photos != 'undefined'
+            ? photos[0].url : ''; //todo - place a default person image (faceless facebook)
 
+        _employeeDetail.socialMediaProfiles = typeof socialProfiles != 'undefined'
+            ? socialProfiles : [];
+        
+        _employeeDetail.websites = typeof websites != 'undefined'
+            ? websites : [];
+        
         return _employeeDetail;
         //end hydrate;
     }

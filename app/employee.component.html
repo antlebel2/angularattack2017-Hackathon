@@ -2,7 +2,7 @@
   You have chosen to learn more about a person.
 </div>
 <div class="component-header">
-  {{_personDetail.name}} - {{_personDetail.city}} - {{_personDetail.address}}
+  {{_personDetail?.fullName}} - {{_personDetail?.gender}} - {{_personDetail?.location}}
 </div>
 
 <div ng-hide="data">
@@ -10,26 +10,21 @@
   <div class="component-header">
     <i class="fa fa-user-circle-o fa-5x"></i>
   </div>
-  <div ng-hide="personalInfo" class="component-header">
-    Phone Number: {{_personDetail.name}} <br />
+  <div class="component-header">
+    Phone Number: {{_personDetail?.fullName}} <br />
     Works For: {{_personDetail.worksFor}} <br />
     Last Job: {{_personDetail.lastJob}} <br />
     Online Since: {{_personDetail.onlineSince}} <br />
   </div>
-  <div ng-hide="social" class="component-header">Social Media Presence:</div>
+  <div ng-if="_personDetail.socialMediaProfiles" class="component-header">Social Media Presence:</div>
   <div>
     <a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-5x" style="color: #3b5998"></i></a>
     <a href="https://www.twitter.com"><i class="fa fa-twitter-square fa-5x" style="color: #00aced"></i></a>
     <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-5x" style="color: #007bb6"></i></a>
   </div>
-  <div ng-hide="websites" class="component-header">Websites:</div>
+  <div ng-if="_personDetail.websites" class="component-header">Websites:</div>
   <div>
     <a href="link1"><i class="fa fa-globe fa-5x"></i></a>
     <a href="link2"><i class="fa fa-globe fa-5x"></i></a>
   </div>
 <br />
-
-<div ng-hide="!data" class="component-header">
-  <i class="fa fa-rebel fa-5x"></i> <br />
-  This person is off the grid!
-</div>

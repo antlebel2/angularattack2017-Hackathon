@@ -40,6 +40,7 @@ export class EmployerApiPromiseService {
             return null; //no company found for that domain
         }
         
+        //hydrate
         var _companyDetail = new EmployerDto();
         
         //---summary---
