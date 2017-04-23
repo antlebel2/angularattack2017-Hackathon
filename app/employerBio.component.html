@@ -2,16 +2,16 @@
     You have chosen to learn more about a company.
 </div>
 <div class="component-header">
-    {{_companyDetail.name}} - {{_companyDetail.city}}, {{_companyDetail.stateCode}} {{_companyDetail.phoneNumber}}
+    {{_companyDetail?.summary?.name}} - {{_companyDetail?.summary?.city}}, {{_companyDetail?.summary?.stateCode}} {{_companyDetail?.summary?.phoneNumber}}
 </div>
 <div class="component-header-container">
-    <img [src]="_companyDetail.logoPic" class="component-header-image"/>
+    <img [src]="_companyDetail?.summary?.logoUrl" class="component-header-image"/>
 </div>
 <div class="component-content">
-    <div class="component-content-data-header">Founded: {{_companyDetail.founded}} </div>
-    <div class="component-content-data-header">Estimated Employees: {{_companyDetail.numEmployees}} </div>
-    <div class="component-content-data-header">Summary: {{_companyDetail.summary}} </div>
-    <div class="component-content-data-header">Mailing Address: {{_companyDetail.address}}, {{_companyDetail.city}}, {{_companyDetail.stateCode}} </div>
+    <div class="component-content-data-header">Founded: {{_companyDetail?.extendedSummary?.founded}} </div>
+    <div class="component-content-data-header">Estimated Employees: {{_companyDetail?.extendedSummary?.numberOfEmployees}} </div>
+    <div class="component-content-data-header field-text ">Summary: {{_companyDetail?.extendedSummary?.overview}} </div>
+    <div class="component-content-data-header">Mailing Address: {{_companyDetail?.extendedSummary?.addresses[0]?.addressLine1}}, {{_companyDetail?.summary?.city}}, {{_companyDetail?.summary?.stateCode}} </div>
 </div>
 <div class="component-button-container">
     <button [routerLink]="['/employer/webStats']" [queryParams]="{companyDomain: _companyDomain}">

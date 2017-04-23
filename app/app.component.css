@@ -1,7 +1,7 @@
 .app-container {
     position: relative;
     margin: 50px;
-    height: 530px;
+    height: 600px;
     background-color: #F4F4F4;
     border-radius: 15px;
     box-shadow: 0px 0px 5px 5px #888888;
@@ -15,6 +15,14 @@
 
 div.panel-heading {
    font-size: x-large; 
+}
+
+div.field-text {
+    border-style: inset;
+    height: 40%;
+    width: 75%;
+    margin: auto;
+    overflow-y: auto;
 }
 
 body, html {
@@ -101,6 +109,9 @@ button:focus {
 
 .component-button-container {
     margin-top: 10px;
+    position: absolute;
+    bottom: 80px;
+    text-align: center;
 }
 
 .form-input-text {
@@ -120,5 +131,5 @@ button:focus {
 
 .spinner-margin {
     margin-top: 12%;
-    color: white;z
+    color: white;
 }

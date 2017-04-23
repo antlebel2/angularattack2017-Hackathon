@@ -18,7 +18,7 @@ var EmployerApiPromiseService = (function () {
     function EmployerApiPromiseService(http, route) {
         this.http = http;
         this.route = route;
-        this.APIKEY = 'c0402b24ca6234';
+        this.APIKEY = 'cd7142feb70b5859';
         this._companyDomain = '&domain=';
         this._companyEndpoint = 'https://api.fullcontact.com/v2/company/lookup.json?apiKey=' + this.APIKEY;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json',
