@@ -25,6 +25,7 @@ export class EmployerComponent{
         .catch(error => console.log(error));
         
         this._companyDetail = new EmployerDto();
+        localStorage.setItem('company', JSON.stringify({companyDomain: this._companyDomain}));
     }
     
     private hydrate(data:any) {
@@ -36,5 +37,7 @@ export class EmployerComponent{
         }
         if(data.organization.contactInfo.phoneNumbers)
             this._companyDetail.phoneNumber = data.organization.contactInfo.phoneNumbers[0]['number'];
+        if(data.logo)
+            this._companyDetail.logoPic = data.logo;
     }
 }

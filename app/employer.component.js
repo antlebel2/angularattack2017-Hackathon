@@ -29,6 +29,7 @@ var EmployerComponent = (function () {
             .then(function (result) { return _this.hydrate(result); })
             .catch(function (error) { return console.log(error); });
         this._companyDetail = new employerDto_1.EmployerDto();
+        localStorage.setItem('company', JSON.stringify({ companyDomain: this._companyDomain }));
     };
     EmployerComponent.prototype.hydrate = function (data) {
         this._companyDetail.name = data.organization.name;
@@ -38,6 +39,8 @@ var EmployerComponent = (function () {
         }
         if (data.organization.contactInfo.phoneNumbers)
             this._companyDetail.phoneNumber = data.organization.contactInfo.phoneNumbers[0]['number'];
+        if (data.logo)
+            this._companyDetail.logoPic = data.logo;
     };
     return EmployerComponent;
 }());
