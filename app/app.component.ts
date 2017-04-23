@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'pm-app',
     template: `
-        <div>
             <div class="app-container">
                 <div class="component-container">
                     <router-outlet></router-outlet>
@@ -13,8 +12,6 @@ import { Component } from '@angular/core';
                     <i class="fa fa-home"></i> Home</button>
                 </div>
             </div>
-        </div>
-    </div>
     `,
 })
 export class AppComponent {

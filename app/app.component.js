@@ -15,11 +15,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-<<<<<<< HEAD
-        template: "\n    <div class=\"full\">\n        <div class=\"app-container\">\n            <div class=\"component-container\">\n                <router-outlet></router-outlet>\n            </div>\n            <div class=\"home-button-container\">\n                <button class=\"home-button\" [routerLink]=\"['/home/']\">\n                <i class=\"fa fa-home\"></i> Home</button>\n                <button class=\"home-button\" [routerLink]=\"['/employee/']\">Employee Page</button>\n            </div>\n        </div>\n    </div>\n    ",
-=======
-        template: "\n        <div>\n            <div class=\"app-container\">\n                <div class=\"component-container\">\n                    <router-outlet></router-outlet>\n                </div>\n                <div class=\"home-button-container\">\n                    <button class=\"home-button\" [routerLink]=\"['/home/']\">\n                    <i class=\"fa fa-home\"></i> Home</button>\n                </div>\n            </div>\n        </div>\n    ",
->>>>>>> 6663159d6b43581f2c691ab67ae641e3c80ffabb
+        template: "\n            <div class=\"app-container\">\n                <div class=\"component-container\">\n                    <router-outlet></router-outlet>\n                </div>\n                <div class=\"home-button-container\">\n                    <button class=\"home-button\" [routerLink]=\"['/home/']\">\n                    <i class=\"fa fa-home\"></i> Home</button>\n                </div>\n            </div>\n    ",
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
