@@ -10,25 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var webApiPromiseService_1 = require("./shared/webApiPromiseService");
+var employerApiPromiseService_1 = require("./shared/employerApiPromiseService");
 var employerDto_1 = require("./shared/employerDto");
 var EmployerComponent = (function () {
-    function EmployerComponent(_moviePromiseService, route) {
-        this._moviePromiseService = _moviePromiseService;
-        this.route = route;
-        this.APIKEY = 'c0402b24ca6234';
-        this._companyDomain = '&domain=';
-        this._companyEndpoint = 'https://api.fullcontact.com/v2/company/lookup.json?apiKey=' + this.APIKEY;
+    function EmployerComponent(_employerPromiseService) {
+        this._employerPromiseService = _employerPromiseService;
     }
     EmployerComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._companyDomain += this.route.snapshot.queryParams['companyDomain'];
-        this._companyEndpoint += this._companyDomain;
-        this._moviePromiseService.getService(this._companyEndpoint)
-            .then(function (result) { return _this.hydrate(result); })
-            .catch(function (error) { return console.log(error); });
         this._companyDetail = new employerDto_1.EmployerDto();
+<<<<<<< HEAD
         localStorage.setItem('company', JSON.stringify({ companyDomain: this._companyDomain }));
     };
     EmployerComponent.prototype.hydrate = function (data) {
@@ -41,16 +32,21 @@ var EmployerComponent = (function () {
             this._companyDetail.phoneNumber = data.organization.contactInfo.phoneNumbers[0]['number'];
         if (data.logo)
             this._companyDetail.logoPic = data.logo;
+=======
+        this._employerPromiseService.getService()
+            .then(function (companyDetail) { return _this._companyDetail = companyDetail; })
+            .catch(function (error) { return console.log(error); });
+>>>>>>> 6663159d6b43581f2c691ab67ae641e3c80ffabb
     };
     return EmployerComponent;
 }());
 EmployerComponent = __decorate([
     core_1.Component({
         templateUrl: 'app/employer.component.html',
-        providers: [webApiPromiseService_1.WebApiPromiseService]
+        providers: [employerApiPromiseService_1.EmployerApiPromiseService]
     }),
     core_1.Injectable(),
-    __metadata("design:paramtypes", [webApiPromiseService_1.WebApiPromiseService, router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [employerApiPromiseService_1.EmployerApiPromiseService])
 ], EmployerComponent);
 exports.EmployerComponent = EmployerComponent;
 //# sourceMappingURL=employer.component.js.map

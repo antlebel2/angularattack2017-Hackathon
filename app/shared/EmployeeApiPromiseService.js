@@ -10,35 +10,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
+var employeeDto_1 = require("./employeeDto");
 require("rxjs/add/operator/toPromise");
-var WebApiPromiseService = (function () {
-    function WebApiPromiseService(http) {
+var EmployeeApiPromiseService = (function () {
+    function EmployeeApiPromiseService(http, route) {
         this.http = http;
+        this.route = route;
+        this.APIKEY = 'c0402b24ca6234';
+        this._employeeEmail = '&email=';
+        this._employeeEndpoint = 'https://api.fullcontact.com/v2/person.json?apiKey=' + this.APIKEY;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json',
             'Accept': 'q=0.8;application/json;q=0.9' });
         this.options = new http_1.RequestOptions({ headers: this.headers });
     }
-    WebApiPromiseService.prototype.getService = function (url) {
+    EmployeeApiPromiseService.prototype.getService = function () {
+        this._employeeEmail += this.route.snapshot.queryParams['employeeEmail'];
+        this._employeeEndpoint += this._employeeEmail;
         return this.http
-            .get(url, this.options)
+            .get(this._employeeEndpoint, this.options)
             .toPromise()
             .then(this.extractData)
             .catch(this.handleError);
     };
-    WebApiPromiseService.prototype.extractData = function (res) {
+    EmployeeApiPromiseService.prototype.extractData = function (res) {
         var body = res.json();
-        return body || {};
+        if (!body)
+            return {};
+        //hydrate - todo null if moved to function??!!??
+        var _employeeDetail = new employeeDto_1.EmployeeDto();
+        return _employeeDetail;
+        //end hydrate;
     };
-    WebApiPromiseService.prototype.handleError = function (error) {
+    EmployeeApiPromiseService.prototype.handleError = function (error) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
     };
-    return WebApiPromiseService;
+    return EmployeeApiPromiseService;
 }());
-WebApiPromiseService = __decorate([
+EmployeeApiPromiseService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], WebApiPromiseService);
-exports.WebApiPromiseService = WebApiPromiseService;
-//# sourceMappingURL=webApiPromiseService.js.map
+    __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute])
+], EmployeeApiPromiseService);
+exports.EmployeeApiPromiseService = EmployeeApiPromiseService;
+//# sourceMappingURL=EmployeeApiPromiseService.js.map
