@@ -14,12 +14,8 @@ var app_component_1 = require("./app.component");
 var home_component_1 = require("./home.component");
 var employee_component_1 = require("./employee.component");
 var employer_component_1 = require("./employer.component");
-<<<<<<< HEAD
 var employerBio_component_1 = require("./employerBio.component");
 var employerSocial_component_1 = require("./employerSocial.component");
-=======
-var employerWeb_component_1 = require("./employerWeb.component");
->>>>>>> 305c005142ec8dd736107e80d145e09f861ff9a6
 var employerSelected_component_1 = require("./employerSelected.component");
 var employeeSelected_component_1 = require("./employeeSelected.component");
 var AppModule = (function () {
@@ -38,12 +34,8 @@ AppModule = __decorate([
                 { path: 'employer', component: employer_component_1.EmployerComponent },
                 { path: 'employerSelected', component: employerSelected_component_1.EmployerSelectedComponent },
                 { path: 'employeeSelected', component: employeeSelected_component_1.EmployeeSelectedComponent },
-<<<<<<< HEAD
                 { path: 'employer/bio', component: employerBio_component_1.EmployerBioComponent },
                 { path: 'employer/social', component: employerSocial_component_1.EmployerSocialComponent },
-=======
-                { path: 'employer/webStatistics', component: employerWeb_component_1.EmployerWebComponent },
->>>>>>> 305c005142ec8dd736107e80d145e09f861ff9a6
                 { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ])
         ],
@@ -54,12 +46,8 @@ AppModule = __decorate([
             employer_component_1.EmployerComponent,
             employerSelected_component_1.EmployerSelectedComponent,
             employeeSelected_component_1.EmployeeSelectedComponent,
-<<<<<<< HEAD
             employerBio_component_1.EmployerBioComponent,
             employerSocial_component_1.EmployerSocialComponent
-=======
-            employerWeb_component_1.EmployerWebComponent
->>>>>>> 305c005142ec8dd736107e80d145e09f861ff9a6
         ],
         bootstrap: [
             app_component_1.AppComponent
