@@ -42,6 +42,7 @@ var EmployerApiPromiseService = (function () {
         if (!body || body.status != '200') {
             return null; //no company found for that domain
         }
+        //hydrate
         var _companyDetail = new employerDto_1.EmployerDto();
         //---summary---
         var name = body.organization.name;

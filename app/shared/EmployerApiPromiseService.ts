@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class EmployerApiPromiseService {
-    private APIKEY = 'c0402b24ca6234';
+    private APIKEY = 'cd7142feb70b5859';
     private _companyDomain = '&domain=';
     private _companyEndpoint = 'https://api.fullcontact.com/v2/company/lookup.json?apiKey=' + this.APIKEY;
     
@@ -40,6 +40,7 @@ export class EmployerApiPromiseService {
             return null; //no company found for that domain
         }
         
+        //hydrate
         var _companyDetail = new EmployerDto();
         
         //---summary---
