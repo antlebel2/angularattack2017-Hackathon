@@ -2,13 +2,19 @@
   You have chosen to learn more about a person.
 </div>
 <div class="component-header">
-  {{fullName | json}} - (Location - region)
+  {{_personDetail.name}} - {{_personDetail.city}} - {{_personDetail.address}}
 </div>
 
 <div ng-hide="data">
   <img src="" />
   <div class="component-header">
     <i class="fa fa-user-circle-o fa-5x"></i>
+  </div>
+  <div ng-hide="personalInfo" class="component-header">
+    Phone Number: {{_personDetail.name}} <br />
+    Works For: {{_personDetail.worksFor}} <br />
+    Last Job: {{_personDetail.lastJob}} <br />
+    Online Since: {{_personDetail.onlineSince}} <br />
   </div>
   <div ng-hide="social" class="component-header">Social Media Presence:</div>
   <div>
@@ -22,6 +28,7 @@
     <a href="link2"><i class="fa fa-globe fa-5x"></i></a>
   </div>
 <br />
+
 <div ng-hide="!data" class="component-header">
   <i class="fa fa-rebel fa-5x"></i> <br />
   This person is off the grid!
