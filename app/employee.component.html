@@ -1,6 +1,8 @@
 <div class="component-title">
-  You have chosen to learn more about a person. <br />
-  (Person Name) - (Location - region)
+  You have chosen to learn more about a person.
+</div>
+<div class="component-header">
+  {{fullName | json}} - (Location - region)
 </div>
 
 <div ng-hide="data">
@@ -18,15 +20,9 @@
   <div>
     <a href="link1"><i class="fa fa-globe fa-5x"></i></a>
     <a href="link2"><i class="fa fa-globe fa-5x"></i></a>
-</div>
+  </div>
 <br />
 <div ng-hide="!data" class="component-header">
   <i class="fa fa-rebel fa-5x"></i> <br />
   This person is off the grid!
 </div>
-<div >
-        <input type="button" value="Show Hide DIV" ng-click="ShowHide()" />
-        <br />
-        <br />
-        <div ng-show = "IsVisible">My DIV</div>
-    </div>
