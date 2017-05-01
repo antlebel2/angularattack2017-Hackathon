@@ -18,7 +18,7 @@ var EmployeeApiPromiseService = (function () {
     function EmployeeApiPromiseService(http, route) {
         this.http = http;
         this.route = route;
-        this.APIKEY = 'cd7142feb70b5859';
+        this.APIKEY = 'fdcae57b2e5a562b';
         this._employeeEmail = '&email=';
         this._employeeEndpoint = 'https://api.fullcontact.com/v2/person.json?apiKey=' + this.APIKEY;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json',
@@ -44,9 +44,6 @@ var EmployeeApiPromiseService = (function () {
         }
         //hydrate
         var _employeeDetail = new employeeDto_1.EmployeeDto();
-        //_companyDetail.summary = {   
-        //    name: typeof name != 'undefined' 
-        //        ? name : '',
         var fullName = body.contactInfo.fullName;
         var location = body.demographics.locationGeneral;
         var gender = body.demographics.gender;
@@ -54,15 +51,34 @@ var EmployeeApiPromiseService = (function () {
         var socialProfiles = body.socialProfiles;
         var websites = body.contactInfo.websites;
         _employeeDetail.fullName = typeof fullName != 'undefined'
-            ? fullName : '';
+            ? fullName : 'N/A';
         _employeeDetail.location = typeof location != 'undefined'
             ? location : 'N/A';
         _employeeDetail.gender = typeof gender != 'undefined'
             ? gender : 'N/A';
         _employeeDetail.photoUrl = typeof photos != 'undefined'
-            ? photos[0].url : ''; //todo - place a default person image (faceless facebook)
-        _employeeDetail.socialMediaProfiles = typeof socialProfiles != 'undefined'
-            ? socialProfiles : [];
+            ? photos[0].url : 'app/assets/images/defaultPerson.png'; //todo - place a default person image (faceless facebook)
+        //social media urls we care about
+        if (typeof socialProfiles !== 'undefined') {
+            _employeeDetail.facebookUrl = socialProfiles.forEach(function (element) {
+                if (element.type === 'facebook') {
+                    return element.url;
+                }
+                return '';
+            });
+            _employeeDetail.twitterUrl = socialProfiles.forEach(function (element) {
+                if (element.type === 'twitter') {
+                    return element.url;
+                }
+                return '';
+            });
+            _employeeDetail.linkedInUrl = socialProfiles.forEach(function (element) {
+                if (element.type === 'linkedin') {
+                    return element.url;
+                }
+                return '';
+            });
+        }
         _employeeDetail.websites = typeof websites != 'undefined'
             ? websites : [];
         return _employeeDetail;
@@ -79,4 +95,4 @@ EmployeeApiPromiseService = __decorate([
     __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute])
 ], EmployeeApiPromiseService);
 exports.EmployeeApiPromiseService = EmployeeApiPromiseService;
-//# sourceMappingURL=employeeApiPromiseService.js.map
+//# sourceMappingURL=EmployeeApiPromiseService.js.map

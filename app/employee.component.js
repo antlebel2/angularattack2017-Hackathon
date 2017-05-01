@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var employeeApiPromiseService_1 = require("./shared/employeeApiPromiseService");
+var EmployeeApiPromiseService_1 = require("./shared/EmployeeApiPromiseService");
 var employeeDto_1 = require("./shared/employeeDto");
 var EmployeeComponent = (function () {
     function EmployeeComponent(_employeePromiseService) {
@@ -29,10 +29,10 @@ var EmployeeComponent = (function () {
 EmployeeComponent = __decorate([
     core_1.Component({
         templateUrl: 'app/employee.component.html',
-        providers: [employeeApiPromiseService_1.EmployeeApiPromiseService]
+        providers: [EmployeeApiPromiseService_1.EmployeeApiPromiseService]
     }),
     core_1.Injectable(),
-    __metadata("design:paramtypes", [employeeApiPromiseService_1.EmployeeApiPromiseService])
+    __metadata("design:paramtypes", [EmployeeApiPromiseService_1.EmployeeApiPromiseService])
 ], EmployeeComponent);
 exports.EmployeeComponent = EmployeeComponent;
 //# sourceMappingURL=employee.component.js.map

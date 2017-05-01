@@ -4,5 +4,5 @@ import { Component } from '@angular/core';
     templateUrl: 'app/employerSelected.component.html'
 })
 export class EmployerSelectedComponent {
-
+    private companyDomain = "";
 }

@@ -4,5 +4,5 @@ import { Component } from '@angular/core';
     templateUrl: 'app/employeeSelected.component.html'
 })
 export class EmployeeSelectedComponent {
-    private _test = 'test';
+    private employeeEmail = "";
 }

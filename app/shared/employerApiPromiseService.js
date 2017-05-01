@@ -18,7 +18,7 @@ var EmployerApiPromiseService = (function () {
     function EmployerApiPromiseService(http, route) {
         this.http = http;
         this.route = route;
-        this.APIKEY = 'cd7142feb70b5859';
+        this.APIKEY = 'fdcae57b2e5a562b';
         this._companyDomain = '&domain=';
         this._companyEndpoint = 'https://api.fullcontact.com/v2/company/lookup.json?apiKey=' + this.APIKEY;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json',
@@ -51,16 +51,16 @@ var EmployerApiPromiseService = (function () {
         var phoneNumbers = body.organization.contactInfo.phoneNumbers;
         _companyDetail.summary = {
             name: typeof name != 'undefined'
-                ? name : '',
+                ? name : 'N/A',
             city: typeof addresses[0].locality != 'undefined'
-                ? addresses[0].locality : '',
+                ? addresses[0].locality : 'N/A',
             stateCode: typeof addresses[0].region.code != 'undefined'
-                ? addresses[0].region.code : '',
+                ? addresses[0].region.code : 'N/A',
             //todo - traverse through photos for logo label and reference that
             logoUrl: typeof logoUrl != 'undefined'
-                ? logoUrl : '',
+                ? logoUrl : 'app/assets/images/defaultLogo.png',
             phoneNumber: typeof phoneNumbers != 'undefined'
-                ? phoneNumbers[0]['number'] : ''
+                ? phoneNumbers[0]['number'] : 'N/A'
         };
         //---web stats---
         var onlineSince = body.onlineSince;

@@ -3,6 +3,8 @@ export class EmployeeDto {
   gender: any;
   location: any;
   photoUrl: any;
-  socialMediaProfiles: any[];
+  facebookUrl: any;
+  twitterUrl: any;
+  linkedInUrl: any;
   websites: any[];
 }

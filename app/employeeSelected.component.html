@@ -11,13 +11,13 @@
 <br />
 <br />
 <div class="component-container">
-    <form action="/employee">
-        <div class="component-title">Enter the person's email address</div>
-        <input type="text" name="employeeEmail" class="form-input-text" placeholder="ex: bob@gmail.com">
-        <br />
-        <br />
-        <button type="submit" class="button-wide fa fa-user-secret fa-lg"> Let's Creep...</button>
-    </form>
+    <div class="component-title">Enter the person's email address</div>
+    <input [(ngModel)]="employeeEmail" name="employeeEmail" class="form-input-text" placeholder="ex: bob@gmail.com">
+    <br />
+    <br />
+    <button class="button-wide fa fa-user-secret fa-lg" [routerLink]="['/employee']" [queryParams]="{employeeEmail: employeeEmail}"> 
+        Let's Creep...
+    </button>
 </div>
 
 

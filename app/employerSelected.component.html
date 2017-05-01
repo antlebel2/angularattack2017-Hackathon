@@ -11,11 +11,11 @@
 <br />
 <br />
 <div class="component-container">
-    <form action="/employer">
-        <div class="component-title">Enter the company domain name</div>
-        <input type="text" name="companyDomain" class="form-input-text" placeholder="ex: google.com">
-        <br />
-        <br />
-        <button type="submit" class="button-wide fa fa-user-secret fa-lg"> Let's Creep...</button>
-    </form>
+    <div class="component-title">Enter the company domain name</div>
+    <input [(ngModel)]="companyDomain" name="companyDomain" class="form-input-text" placeholder="ex: google.com">
+    <br />
+    <br />
+    <button class="button-wide fa fa-user-secret fa-lg" [routerLink]="['/employer']" [queryParams]="{companyDomain: companyDomain}"> 
+        Let's Creep...
+    </button>
 </div>

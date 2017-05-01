@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class EmployeeApiPromiseService {
-    private APIKEY = 'cd7142feb70b5859';
+    private APIKEY = 'fdcae57b2e5a562b';
     private _employeeEmail = '&email=';
     private _employeeEndpoint = 'https://api.fullcontact.com/v2/person.json?apiKey=' + this.APIKEY;
     
@@ -42,10 +42,6 @@ export class EmployeeApiPromiseService {
         //hydrate
         var _employeeDetail = new EmployeeDto();
         
-        //_companyDetail.summary = {   
-        //    name: typeof name != 'undefined' 
-        //        ? name : '',
-        
         var fullName = body.contactInfo.fullName;
         var location = body.demographics.locationGeneral;
         var gender = body.demographics.gender;
@@ -54,7 +50,7 @@ export class EmployeeApiPromiseService {
         var websites = body.contactInfo.websites;
         
         _employeeDetail.fullName = typeof fullName != 'undefined'
-            ? fullName : ''; 
+            ? fullName : 'N/A'; 
             
         _employeeDetail.location = typeof location != 'undefined'
             ? location : 'N/A';
@@ -63,10 +59,31 @@ export class EmployeeApiPromiseService {
             ? gender : 'N/A';
             
         _employeeDetail.photoUrl = typeof photos != 'undefined'
-            ? photos[0].url : ''; //todo - place a default person image (faceless facebook)
+            ? photos[0].url : 'app/assets/images/defaultPerson.png'; //todo - place a default person image (faceless facebook)
 
-        _employeeDetail.socialMediaProfiles = typeof socialProfiles != 'undefined'
-            ? socialProfiles : [];
+        //social media urls we care about
+        if(typeof socialProfiles !== 'undefined'){
+            _employeeDetail.facebookUrl = socialProfiles.forEach(function(element:any){
+                if(element.type === 'facebook'){
+                    return element.url;
+                }     
+                return '';  
+            });
+            
+            _employeeDetail.twitterUrl = socialProfiles.forEach(function(element:any){
+                if(element.type === 'twitter'){
+                    return element.url;
+                }     
+                return '';  
+            });
+            
+            _employeeDetail.linkedInUrl = socialProfiles.forEach(function(element:any){
+                if(element.type === 'linkedin'){
+                    return element.url;
+                }     
+                return '';  
+            });
+        }
         
         _employeeDetail.websites = typeof websites != 'undefined'
             ? websites : [];

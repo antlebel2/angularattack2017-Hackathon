@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var EmployerSelectedComponent = (function () {
     function EmployerSelectedComponent() {
+        this.companyDomain = "";
     }
     return EmployerSelectedComponent;
 }());

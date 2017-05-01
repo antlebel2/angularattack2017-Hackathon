@@ -13,15 +13,19 @@
     <div class="component-content-data-header">Websites: </div>
   </div>
   <div class="component-content-right component-content-link-container">
-    <div class="component-content-link" *ngFor='let i of _personDetail.websites'>
-      <a [href]="i.url"><i class="fa fa-globe fa-lg component-content-link"></i></a>
+    <div class="component-content-link" ng-if="_personDetail.facebookUrl">
+      <a [href]="_personDetail.facebookUrl"><i class="fa fa-facebook-square fa-lg component-content-link" style="color: #3b5998"></i></a>
+    </div>
+    <div class="component-content-link" ng-if="_personDetail.twitterUrl">
+      <a [href]="_personDetail.twitterUrl"><i class="fa fa-twitter-square fa-lg component-content-link" style="color: #00aced"></i></a>
+    </div>
+    <div class="component-content-link" ng-if="_personDetail.linkedInUrl">
+      <a [href]="_personDetail.linkedInUrl"><i class="fa fa-linkedin-square fa-lg component-content-link" style="color: #007bb6"></i></a>
+    </div>
+  </div>
+  <div class="component-content-right component-content-link-container">
+    <div class="component-content-link" *ngFor='let website of _personDetail.websites'>
+      <a [href]="website.url"><i class="fa fa-globe fa-lg component-content-link"></i></a>
     </div>
   </div>
 </div>
-  <div ng-if="_personDetail.socialMediaProfiles" class="component-header">Social Media Presence:</div>
-  <div>
-    <a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-5x" style="color: #3b5998"></i></a>
-    <a href="https://www.twitter.com"><i class="fa fa-twitter-square fa-5x" style="color: #00aced"></i></a>
-    <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-5x" style="color: #007bb6"></i></a>
-  </div>
-  <div ng-if="_personDetail.websites" class="component-header">Websites:</div>
